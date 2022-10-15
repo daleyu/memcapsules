@@ -1,4 +1,4 @@
-import { computed, makeAutoObservable } from "mobx";
+import { makeAutoObservable, observable } from "mobx";
 import { ComposerRequestBody } from "../types/requestBodies";
 
 export class ProxyFormStore {
@@ -8,7 +8,7 @@ export class ProxyFormStore {
 
   constructor() {
     makeAutoObservable(this, {
-      recipients: computed.struct,
+      recipients: observable.struct,
     });
   }
 
@@ -33,7 +33,7 @@ export class Recipient {
 
   constructor() {
     makeAutoObservable(this, {
-      occasions: computed.struct,
+      occasions: observable.struct,
     });
   }
 }
