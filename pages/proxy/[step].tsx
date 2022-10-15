@@ -28,7 +28,7 @@ function getPrevStep(step: unknown): Step | null {
   }
 }
 
-const Name: NextPage = () => {
+const Proxy: NextPage = () => {
   const router = useRouter();
   const { step } = router.query;
 
@@ -91,4 +91,4 @@ const Name: NextPage = () => {
   return <SplitLayout sidebar={<p>sidebar</p>} main={main} />;
 };
 
-export default Name;
+export default Proxy;
