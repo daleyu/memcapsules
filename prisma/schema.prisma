@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Composer {
+  id        String      @id
+  name      String
+  Recipient Recipient[]
+}
+
+model Recipient {
+  id         String      @id
+  name       String
+  composer   Composer    @relation(fields: [composerId], references: [id])
+  composerId String
+  Occassion  Occassion[]
+}
+
+model Occassion {
+  id          String    @id
+  label       String
+  date        DateTime
+  recipient   Recipient @relation(fields: [recipientId], references: [id])
+  recipientId String
+
+  message String?
+  // TODO add video
+}
