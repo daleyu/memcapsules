@@ -6,7 +6,7 @@ interface Props {
   occasion: Occasion;
 }
 
-export const OccasionEntry = observer(function OccasionEntry({
+export const ProxyOccasionEntry = observer(function ProxyOccasionEntry({
   occasion,
 }: Props) {
   // TODO deal with time zone weirdness

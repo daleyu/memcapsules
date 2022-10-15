@@ -10,6 +10,11 @@ const nextConfig = {
         destination: "/proxy/name",
         permanent: false,
       },
+      {
+        source: "/compose/:composerId",
+        destination: "/compose/:composerId/0",
+        permanent: false,
+      },
     ];
   },
 };

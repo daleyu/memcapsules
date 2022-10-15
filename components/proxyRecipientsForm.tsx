@@ -1,19 +1,19 @@
 import { observer } from "mobx-react-lite";
 import { ProxyFormStore } from "../store/proxyFormStore";
-import { RecipientEntry } from "./recipientEntry";
+import { ProxyRecipientEntry } from "./proxyRecipientEntry";
 
 interface Props {
   proxyFormStore: ProxyFormStore;
 }
 
-export const RecipientsForm = observer(function RecipientsForm({
+export const ProxyRecipientsForm = observer(function ProxyRecipientsForm({
   proxyFormStore,
 }: Props) {
   console.log("here");
   return (
     <div>
       {proxyFormStore.recipients.map((recipient, index) => (
-        <RecipientEntry key={index} recipient={recipient} />
+        <ProxyRecipientEntry key={index} recipient={recipient} />
       ))}
       <button
         onClick={() => {

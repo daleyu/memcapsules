@@ -1,12 +1,12 @@
 import { observer } from "mobx-react-lite";
 import { Recipient } from "../store/proxyFormStore";
-import { OccasionEntry } from "./occasionEntry";
+import { ProxyOccasionEntry } from "./proxyOccasionEntry";
 
 interface Props {
   recipient: Recipient;
 }
 
-export const RecipientEntry = observer(function RecipientEntry({
+export const ProxyRecipientEntry = observer(function ProxyRecipientEntry({
   recipient,
 }: Props) {
   return (
@@ -60,7 +60,7 @@ const OccasionList = observer(function OccasionList({
   return (
     <div>
       {recipient.occasions.map((occasion, index) => (
-        <OccasionEntry key={index} occasion={occasion} />
+        <ProxyOccasionEntry key={index} occasion={occasion} />
       ))}
       <button
         onClick={() => {

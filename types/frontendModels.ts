@@ -18,4 +18,5 @@ export interface OccasionFrontendModel {
   id: string;
   label: string;
   date: string;
+  message: string | null;
 }

@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import absoluteUrl from "next-absolute-url";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -27,9 +27,14 @@ const Done: NextPage<Props> = ({ origin }) => {
   return <SplitLayout sidebar={<></>} main={main} />;
 };
 
-Done.getInitialProps = ({ req }) => {
-  const { origin } = absoluteUrl(req);
-  return { origin };
+export const getServerSideProps: GetServerSideProps<Props> = async (
+  context
+) => {
+  const { origin } = absoluteUrl(context.req);
+
+  return {
+    props: { origin },
+  };
 };
 
 export default Done;
