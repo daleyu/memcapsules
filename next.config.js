@@ -4,11 +4,13 @@ const nextConfig = {
   swcMinify: true,
 
   async redirects() {
-    return {
-      source: "/proxy",
-      destination: "/proxy/name",
-      permanent: false,
-    };
+    return [
+      {
+        source: "/proxy",
+        destination: "/proxy/name",
+        permanent: false,
+      },
+    ];
   },
 };
 
