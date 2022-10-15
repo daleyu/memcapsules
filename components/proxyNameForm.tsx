@@ -1,4 +1,5 @@
 import { observer } from "mobx-react-lite";
+import { ProxyName } from "../layouts/form.style.ts";
 import { ProxyFormStore } from "../store/proxyFormStore";
 
 interface Props {
@@ -12,7 +13,7 @@ export const ProxyNameForm = observer(function ProxyNameForm({
     <form>
       <div>
         <label>
-          Proxy name:
+          <ProxyName> Proxy name: </ProxyName>mn
           <input
             type="text"
             value={proxyFormStore.proxyName}

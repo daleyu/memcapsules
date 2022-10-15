@@ -58,9 +58,11 @@ const Name: NextPage = () => {
               <Image src={HAND} layout="responsive" alt="tsah" />
             </ImageSideContainer>
             <TextSideContainer>
-              <p>Let's get started on creating your memory capsules!</p>
-              <p>When would you like to retrieve your memory capsules</p>
-              <p>and remember you? When do you to retrieve it?</p>
+              <p>
+                <b> Let's get started on creating your memory capsules!</b>
+                <br></br>When would you like to retrieve your memory capsules
+                and remember you? When do you to retrieve it?
+              </p>
             </TextSideContainer>
           </SideContainer>
         </div>

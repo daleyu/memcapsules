@@ -30,6 +30,11 @@ export const SideContainer = styled.div`
   flex-direction: row;
   white-space: pre-wrap;
   align-items: flex-start;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 `;
 
 export const ImageSideContainer = styled.div`
@@ -40,7 +45,15 @@ export const ImageSideContainer = styled.div`
 
 export const TextSideContainer = styled.div`
   position: relative;
+  max-width: 33%;
+
   white-space: pre-wrap;
   display: inline-block;
+  word-wrap: break-word;
+  flex: 1;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
   word-wrap: break-word;
 `;
