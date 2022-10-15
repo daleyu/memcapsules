@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prisma-migrate": "prisma migrate dev",
+    "prisma-generate": "prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "^4.4.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "next": "12.3.1",
