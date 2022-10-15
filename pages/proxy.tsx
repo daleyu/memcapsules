@@ -5,6 +5,7 @@ import styles from "../styles/proxy.module.css";
 import logo from "../images/logo.png";
 import NAME from "../images/name-button.png";
 import COMPOSE from "../images/compose-button.png";
+import CONFIRM from "../images/confirm.png";
 
 const Home: NextPage = () => {
   return (
@@ -25,31 +26,25 @@ const Home: NextPage = () => {
         <span className={styles.compose}>
           <Image src={COMPOSE} alt="compose" />
         </span>
-        <form action="/action_page.php">
-          <h1>Login Form</h1>
-          <div className={styles.formcontainer}>
-            <hr />
-            <div className={styles.container}>
-              <label for="uname">
-                <strong>Name</strong>
-              </label>
-              <input type="text" placeholder="Enter Name" name="uname" required>
-                {" "}
-              </input>
-              <label for="psw">
-                <strong>Composer</strong>
-              </label>
-              <input
-                type="password"
-                placeholder="Enter Composer"
-                name="psw"
-                required
-              >
-                {" "}
-              </input>
-            </div>
-            <button type="submit">Commit</button>
-          </div>
+        <form action="/" method="post">
+          <label htmlFor="first">Name:</label>
+          <input
+            type="text"
+            className={styles.nameinfo}
+            id="first"
+            name="first"
+          />
+          <label htmlFor="composer">Composer:</label>
+          <input
+            type="text"
+            className={styles.composerinfo}
+            id="last"
+            name="last"
+          />
+          <button type="submit" className={styles.confirm}>
+            {" "}
+            Confirm <Image src={CONFIRM} alt="confirm" />{" "}
+          </button>
         </form>
       </main>
     </div>
