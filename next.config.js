@@ -6,6 +6,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/",
+        destination: "/proxy",
+        permanent: false,
+      },
+      {
         source: "/proxy",
         destination: "/proxy/name",
         permanent: false,
