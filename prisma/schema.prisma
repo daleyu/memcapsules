@@ -13,6 +13,7 @@ datasource db {
 model Composer {
   id        String      @id
   name      String
+  proxyName String? // if null, proxy is same as composer
   Recipient Recipient[]
 }
 
