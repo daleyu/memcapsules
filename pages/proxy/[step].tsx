@@ -2,13 +2,13 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { ReactNode, useCallback, useState } from "react";
-<<<<<<< HEAD
 import { ProxyNameForm } from "../../components/ProxyNameForm";
 import { ReceipientNameForm } from "../../components/receipientNameForm";
-import { SideContainer } from "../../layouts/proxy.style.ts";
-=======
-import { ProxyNameForm } from "../../components/proxyNameForm";
->>>>>>> 3ba29941a9550b10fed852232144cc6153a05b36
+import {
+  ImageSideContainer,
+  SideContainer,
+  TextSideContainer,
+} from "../../layouts/proxy.style.ts";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import HAND from "../../public/images/hand.png";
@@ -54,7 +54,17 @@ const Name: NextPage = () => {
       sidebar={
         <div>
           <SideContainer>
-            <Image src={HAND} layout="responsive" alt="tsah" />
+            <ImageSideContainer>
+              <Image src={HAND} layout="responsive" alt="tsah" />
+            </ImageSideContainer>
+            <TextSideContainer>
+              <h3>Let's get started on creating your memory capsules!</h3>
+              <h3>
+                Who would you like to retrieve your memory capsules and remember
+                you?
+              </h3>
+              <h3>When do you want them to retrieve it?</h3>
+            </TextSideContainer>
           </SideContainer>
         </div>
       }
