@@ -19,10 +19,10 @@ export const Main = styled.div`
   position: relative;
 `;
 
-export const LogoContainer = styled.div`
+export const SideContainer = styled.div`
   position: absolute;
   left: 10px;
   top: 10px;
-  width: 206px;
-  height: 116px;
+  width: 56px;
+  height: 36px;
 `;
