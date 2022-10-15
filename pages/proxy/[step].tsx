@@ -4,7 +4,11 @@ import { useRouter } from "next/router";
 import { ReactNode, useCallback, useState } from "react";
 import { ProxyNameForm } from "../../components/ProxyNameForm";
 import { ReceipientNameForm } from "../../components/receipientNameForm";
-import { SideContainer } from "../../layouts/proxy.style.ts";
+import {
+  ImageSideContainer,
+  SideContainer,
+  TextSideContainer,
+} from "../../layouts/proxy.style.ts";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import HAND from "../../public/images/hand.png";
@@ -54,12 +58,9 @@ const Name: NextPage = () => {
               <Image src={HAND} layout="responsive" alt="tsah" />
             </ImageSideContainer>
             <TextSideContainer>
-              <h3>Let's get started on creating your memory capsules!</h3>
-              <h3>
-                Who would you like to retrieve your memory capsules and remember
-                you?
-              </h3>
-              <h3>When do you want them to retrieve it?</h3>
+              <p>Let's get started on creating your memory capsules!</p>
+              <p>When would you like to retrieve your memory capsules</p>
+              <p>and remember you? When do you to retrieve it?</p>
             </TextSideContainer>
           </SideContainer>
         </div>

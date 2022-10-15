@@ -14,6 +14,7 @@ export const Sidebar = styled.div`
   background-color: ${Colors.offWhite};
   word-wrap: break-word;
   overflow: hidden;
+  box-sizing: border-box;
 `;
 
 export const Main = styled.div`
@@ -23,9 +24,11 @@ export const Main = styled.div`
 
 export const SideContainer = styled.div`
   position: absolute;
+  display: inline-block;
   left: 10px;
   top: 10px;
   flex-direction: row;
+  white-space: pre-wrap;
   align-items: flex-start;
 `;
 
@@ -37,5 +40,7 @@ export const ImageSideContainer = styled.div`
 
 export const TextSideContainer = styled.div`
   position: relative;
+  white-space: pre-wrap;
+  display: inline-block;
   word-wrap: break-word;
 `;
