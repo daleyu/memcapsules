@@ -14,7 +14,7 @@ model Composer {
   id        String      @id
   name      String
   proxyName String? // if null, proxy is same as composer
-  Recipient Recipient[]
+  recipient Recipient[]
 }
 
 model Recipient {
@@ -22,7 +22,7 @@ model Recipient {
   name       String
   composer   Composer    @relation(fields: [composerId], references: [id])
   composerId String
-  Occassion  Occassion[]
+  occassion  Occassion[]
 }
 
 model Occassion {
