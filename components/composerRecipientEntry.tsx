@@ -19,7 +19,7 @@ export const ComposerRecipientEntry = observer(function ComposerRecipientEntry({
         const occasion = composerFormStore.occasionsById.get(savedOccasion.id);
         if (!occasion) return null;
 
-        return <ComposerOccasionEntry occasion={occasion} />;
+        return <ComposerOccasionEntry key={occasion.id} occasion={occasion} />;
       })}
     </div>
   );
