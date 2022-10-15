@@ -3,7 +3,11 @@ import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
 import { ProxyNameForm } from "../../components/proxyNameForm";
 import { ProxyRecipientsForm } from "../../components/proxyRecipientsForm";
-import { SideContainer, TextSideContainer } from "../../layouts/proxy.style";
+import {
+  SideContainer,
+  SideText,
+  TextSideContainer,
+} from "../../layouts/proxy.style";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import { ProxyFormStore } from "../../store/proxyFormStore";
@@ -94,13 +98,15 @@ const Proxy: NextPage = () => {
       sidebar={
         <div>
           <SideContainer>
-            <p style={{ fontSize: 42 }}>👋</p>
+            <p style={{ fontSize: 100, margin: 0 }}>👋</p>
             <TextSideContainer>
-              <p>
-                <b> Let's get started on creating your memory capsules!</b>
-                <br></br>When would you like to retrieve your memory capsules
-                and remember you? When do you to retrieve it?
-              </p>
+              <SideText>
+                <b>Let's get started on creating your memory capsules!</b>
+                <br></br>
+                <br></br>
+                When would you like to retrieve your memory capsules and
+                remember you? When do you to retrieve it?
+              </SideText>
             </TextSideContainer>
           </SideContainer>
         </div>

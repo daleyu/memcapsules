@@ -28,13 +28,14 @@ export const SideContainer = styled.div`
   left: 10px;
   top: 10px;
   flex-direction: row;
-  white-space: pre-wrap;
-  align-items: flex-start;
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
+  padding-left: 20px;
+`;
+
+export const SideText = styled.p`
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
+  font-weight: 700;
 `;
 
 export const TextSideContainer = styled.div`
