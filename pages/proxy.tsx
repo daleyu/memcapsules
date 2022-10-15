@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
+import Head from "next/head";
 import styles from "../styles/proxy.module.css";
 import logo from "../images/logo.png";
 import NAME from "../images/name-button.png";
@@ -12,11 +12,13 @@ const Home: NextPage = () => {
       <Head>
         <title>MemCapsules</title>
         <meta name="description" content="Hack Harvard" />
-        <link rel="icon" href={logo} />
+        <link rel="icon" href="../images/logo.png" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}></h1>
+        <span className={styles.logo}>
+          <Image src={logo} alt="Logo" />
+        </span>
       </main>
     </div>
   );
