@@ -17,5 +17,5 @@ interface Occasion {
 }
 
 export interface OccasionRequestBody {
-  message: string;
+  message: string | null;
 }
