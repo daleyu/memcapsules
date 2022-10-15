@@ -4,7 +4,11 @@ import { useRouter } from "next/router";
 import { ReactNode, useCallback, useState } from "react";
 import { ProxyNameForm } from "../../components/ProxyNameForm";
 import { ReceipientNameForm } from "../../components/receipientNameForm";
-import { SideContainer } from "../../layouts/proxy.style.ts";
+import {
+  ImageSideContainer,
+  SideContainer,
+  TextSideContainer,
+} from "../../layouts/proxy.style.ts";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import HAND from "../../public/images/hand.png";
