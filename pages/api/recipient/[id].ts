@@ -25,6 +25,8 @@ export default async function handler(
   res.status(200).json({
     id: recipient.id,
     name: recipient.name,
+    email: recipient.email,
+    phone: recipient.phone,
     composerName: recipient.composer.name,
     occasionIds: recipient.occasions.map((occasion) => occasion.id),
   });

@@ -26,6 +26,8 @@ export default async function handler(
         create: body.recipients.map((recipient) => ({
           id: generateId(RECIPIENT_ID_LENGTH),
           name: recipient.name,
+          email: recipient.email,
+          phone: recipient.phone,
           occasions: {
             create: recipient.occasions.map((occasion) => ({
               id: generateId(OCCASION_ID_LENGTH),

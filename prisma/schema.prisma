@@ -20,6 +20,8 @@ model Composer {
 model Recipient {
   id         String     @id
   name       String
+  email      String?
+  phone      String?
   composer   Composer   @relation(fields: [composerId], references: [id])
   composerId String
   occasions  Occasion[]

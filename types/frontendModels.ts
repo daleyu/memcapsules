@@ -8,6 +8,8 @@ export interface ComposerFrontendModel {
 export interface RecipientFrontendModel {
   id: string;
   name: string;
+  email: string | null;
+  phone: string | null;
   composerName: string;
   occasionIds: string[];
 }

@@ -6,6 +6,8 @@ export interface ComposerRequestBody {
 
 interface Recipient {
   name: string;
+  email: string | null;
+  phone: string | null;
   occasions: Occasion[];
 }
 
