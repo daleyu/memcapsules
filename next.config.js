@@ -20,6 +20,11 @@ const nextConfig = {
         destination: "/compose/:composerId/0",
         permanent: false,
       },
+      {
+        source: "/view/:recipientId",
+        destination: "/view/:recipientId/0",
+        permanent: false,
+      },
     ];
   },
 };

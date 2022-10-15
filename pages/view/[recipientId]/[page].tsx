@@ -1,20 +1,24 @@
 import { GetServerSideProps, NextPage } from "next";
-import { RecipientOccasionEntry } from "../../components/recipientOccasionEntry";
-import { SplitLayout } from "../../layouts/splitLayout";
-import { prisma } from "../../server/prisma";
-import { RecipientFrontendModel } from "../../types/frontendModels";
+import { RecipientFormControls } from "../../../components/recipientFormControls";
+import { RecipientOccasionEntry } from "../../../components/recipientOccasionEntry";
+import { SplitLayout } from "../../../layouts/splitLayout";
+import { prisma } from "../../../server/prisma";
+import { RecipientFrontendModel } from "../../../types/frontendModels";
 
 interface Props {
   recipient: RecipientFrontendModel;
+  page: number;
 }
 
-const Compose: NextPage<Props> = ({ recipient }) => {
+const Compose: NextPage<Props> = ({ recipient, page }) => {
+  const occasion = recipient.occasions[page - 1];
+
   const main = (
     <div>
       <h1>Hello, {recipient.name}</h1>
-      {recipient.occasions.map((occasion) => (
-        <RecipientOccasionEntry key={occasion.id} occasion={occasion} />
-      ))}
+      <h2>Messages from {recipient.composerName}</h2>
+      <RecipientOccasionEntry occasion={occasion} />
+      <RecipientFormControls recipient={recipient} page={page} />
     </div>
   );
 
@@ -25,6 +29,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   context
 ) => {
   const recipientId = context.query.recipientId as string;
+  const pageStr = context.query.page as string;
 
   const dbRecipient = await prisma.recipient.findUnique({
     where: { id: recipientId },
@@ -40,7 +45,19 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
     };
   }
 
-  const now = new Date().getTime();
+  const page = Number(pageStr);
+
+  if (isNaN(page) || page < 1 || page > dbRecipient.occasions.length) {
+    return {
+      redirect: {
+        destination: `/view/${recipientId}/1`,
+        permanent: false,
+      },
+    };
+  }
+
+  // const now = new Date().getTime();
+  const now = 0; // TODO revert
 
   const occasions = dbRecipient.occasions
     .filter((occasion) => occasion.date.getTime() > now)
@@ -61,7 +78,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   };
 
   return {
-    props: { recipient },
+    props: { recipient, page },
   };
 };
 
