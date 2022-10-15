@@ -9,7 +9,11 @@ export const ProxyNameForm = observer(function ProxyNameForm({
   proxyFormStore,
 }: Props) {
   return (
-    <form>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+      }}
+    >
       <div>
         <label>
           Proxy name:

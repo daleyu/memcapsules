@@ -1,4 +1,4 @@
-import { makeAutoObservable, observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import { ComposerRequestBody } from "../types/requestBodies";
 
 export class ProxyFormStore {
@@ -7,9 +7,11 @@ export class ProxyFormStore {
   recipients: Recipient[] = [];
 
   constructor() {
-    makeAutoObservable(this, {
-      recipients: observable.struct,
-    });
+    makeAutoObservable(this);
+  }
+
+  addRecipient() {
+    this.recipients.push(new Recipient());
   }
 
   get composerRequestBody(): ComposerRequestBody {
@@ -18,6 +20,8 @@ export class ProxyFormStore {
       proxyName: this.proxyName,
       recipients: this.recipients.map((recipient) => ({
         name: recipient.name,
+        email: recipient.email.length > 0 ? recipient.email : null,
+        phone: recipient.phone.length > 0 ? recipient.phone : null,
         occasions: recipient.occasions.map((occasion) => ({
           label: occasion.label,
           date: occasion.date.toISOString(),
@@ -29,12 +33,16 @@ export class ProxyFormStore {
 
 export class Recipient {
   name = "";
+  email = "";
+  phone = "";
   occasions: Occasion[] = [];
 
   constructor() {
-    makeAutoObservable(this, {
-      occasions: observable.struct,
-    });
+    makeAutoObservable(this);
+  }
+
+  addOccasion(defaultDate: Date) {
+    this.occasions.push(new Occasion(defaultDate));
   }
 }
 

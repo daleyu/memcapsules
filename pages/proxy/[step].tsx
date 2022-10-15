@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { ReactNode, useCallback, useState } from "react";
+import { ReactNode, useState } from "react";
 import { ProxyNameForm } from "../../components/proxyNameForm";
+import { RecipientsForm } from "../../components/recipientsForm";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import { ProxyFormStore } from "../../store/proxyFormStore";
@@ -13,7 +14,7 @@ const Name: NextPage = () => {
 
   const [proxyFormStore] = useState(() => new ProxyFormStore());
 
-  const submit = useCallback(() => {
+  const submit = () => {
     fetchApi<ComposerFrontendModel>(
       "POST",
       proxyFormStore.composerRequestBody
@@ -27,13 +28,16 @@ const Name: NextPage = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(proxyFormStore.composerRequestBody),
     });
-  }, [proxyFormStore.composerRequestBody]);
+  };
 
   let formElement: ReactNode;
 
   switch (step) {
     case "name":
       formElement = <ProxyNameForm proxyFormStore={proxyFormStore} />;
+      break;
+    case "recipients":
+      formElement = <RecipientsForm proxyFormStore={proxyFormStore} />;
       break;
     default:
       formElement = <>Error: invalid step</>;
