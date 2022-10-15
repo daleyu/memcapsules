@@ -12,6 +12,7 @@
     "prisma-generate": "prisma generate"
   },
   "dependencies": {
+    "date-fns": "^2.29.3",
     "mobx": "^6.6.2",
     "mobx-react-lite": "^3.4.0",
     "next": "12.3.1",
