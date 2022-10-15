@@ -8,7 +8,7 @@ import {
   ImageSideContainer,
   SideContainer,
   TextSideContainer,
-} from "../../layouts/proxy.style.ts";
+} from "../../layouts/proxy.style";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import HAND from "../../public/images/hand.png";
