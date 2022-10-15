@@ -1,9 +1,9 @@
 export enum Colors {
   // grays
   white = "#ffffff",
-  offWhite = "#f7f7f7",
+  offWhite = "#B0AAAA",
   darkText = "#333333",
 
   // colors
-  primary = "red",
+  primary = "#FF4970",
 }
