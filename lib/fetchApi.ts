@@ -1,8 +1,9 @@
 export async function fetchApi<Res>(
+  path: string,
   method: "GET" | "PATCH" | "POST",
   body?: any // TODO improve type
 ): Promise<Res> {
-  const res = await fetch("/api/proxy", {
+  const res = await fetch(path, {
     method,
     ...(body && {
       headers: { "Content-Type": "application/json" },
