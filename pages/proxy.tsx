@@ -1,11 +1,9 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/proxy.css";
 
 const Home: NextPage = () => {
   return (
-    
+
     <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
         <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
             <!-- Name -->
