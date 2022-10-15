@@ -28,6 +28,10 @@ export default async function handler(
     email: recipient.email,
     phone: recipient.phone,
     composerName: recipient.composer.name,
-    occasionIds: recipient.occasions.map((occasion) => occasion.id),
+    occasions: recipient.occasions.map((occasion) => ({
+      id: occasion.id,
+      label: occasion.label,
+      date: occasion.date.toISOString(),
+    })),
   });
 }

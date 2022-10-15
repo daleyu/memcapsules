@@ -11,7 +11,7 @@ export interface RecipientFrontendModel {
   email: string | null;
   phone: string | null;
   composerName: string;
-  occasionIds: string[];
+  occasions: OccasionFrontendModel[];
 }
 
 export interface OccasionFrontendModel {

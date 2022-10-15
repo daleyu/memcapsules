@@ -54,8 +54,14 @@ export default async function handler(
     recipients: composer.recipients.map((recipient) => ({
       id: recipient.id,
       name: recipient.name,
+      email: recipient.email,
+      phone: recipient.phone,
       composerName: composer.name,
-      occasionIds: recipient.occasions.map((occasion) => occasion.id),
+      occasions: recipient.occasions.map((occasion) => ({
+        id: occasion.id,
+        label: occasion.label,
+        date: occasion.date.toISOString(),
+      })),
     })),
   });
 }
