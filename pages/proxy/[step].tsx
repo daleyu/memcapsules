@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { ReactNode, useCallback, useState } from "react";
-import { ProxyNameForm } from "../../components/ProxyNameForm";
+import { ProxyNameForm } from "../../components/proxyNameForm";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import { ProxyFormStore } from "../../store/proxyFormStore";
@@ -33,7 +33,7 @@ const Name: NextPage = () => {
 
   switch (step) {
     case "name":
-      formElement = <ProxyNameForm />;
+      formElement = <ProxyNameForm proxyFormStore={proxyFormStore} />;
       break;
     default:
       formElement = <>Error: invalid step</>;
