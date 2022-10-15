@@ -1,8 +1,8 @@
-export function NameForm() {
+export function DeliveryDateForm() {
   return (
     <form>
       <label>
-        Composer:
+        Delivery Date:
         <input type="date" />
       </label>
     </form>

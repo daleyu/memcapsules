@@ -1,4 +1,4 @@
-export function composerNameForm() {
+export function ComposerNameForm() {
   return (
     <form>
       <label>

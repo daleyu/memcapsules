@@ -1,4 +1,4 @@
-export function receipientNameForm() {
+export function ReceipientNameForm() {
   return (
     <form>
       <label>
