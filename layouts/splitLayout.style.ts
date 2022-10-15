@@ -19,6 +19,11 @@ export const Main = styled.div`
   position: relative;
 `;
 
+export const MainContent = styled.div`
+  padding: 60px 30px 30px 30px;
+  position: relative;
+`;
+
 export const LogoContainer = styled.div`
   position: absolute;
   left: 10px;
