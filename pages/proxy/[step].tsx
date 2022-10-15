@@ -1,17 +1,11 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
 import { ProxyNameForm } from "../../components/proxyNameForm";
 import { ProxyRecipientsForm } from "../../components/proxyRecipientsForm";
-import {
-  ImageSideContainer,
-  SideContainer,
-  TextSideContainer,
-} from "../../layouts/proxy.style";
+import { SideContainer, TextSideContainer } from "../../layouts/proxy.style";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
-import HAND from "../../public/images/hand.png";
 import { ProxyFormStore } from "../../store/proxyFormStore";
 import { ComposerFrontendModel } from "../../types/frontendModels";
 
@@ -100,9 +94,7 @@ const Proxy: NextPage = () => {
       sidebar={
         <div>
           <SideContainer>
-            <ImageSideContainer>
-              <Image src={HAND} layout="responsive" alt="tsah" />
-            </ImageSideContainer>
+            <p style={{ fontSize: 42 }}>👋</p>
             <TextSideContainer>
               <p>
                 <b> Let's get started on creating your memory capsules!</b>

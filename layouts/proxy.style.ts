@@ -37,12 +37,6 @@ export const SideContainer = styled.div`
   word-wrap: break-word;
 `;
 
-export const ImageSideContainer = styled.div`
-  position: relative;
-  height: 56px;
-  width: 36px;
-`;
-
 export const TextSideContainer = styled.div`
   position: relative;
   max-width: 33%;
