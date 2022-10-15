@@ -17,6 +17,7 @@ export const Sidebar = styled.div`
 export const Main = styled.div`
   flex: 2;
   position: relative;
+  padding: 60px 30px 30px 30px;
 `;
 
 export const LogoContainer = styled.div`
