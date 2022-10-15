@@ -18,14 +18,14 @@ model Composer {
 }
 
 model Recipient {
-  id         String      @id
+  id         String     @id
   name       String
-  composer   Composer    @relation(fields: [composerId], references: [id])
+  composer   Composer   @relation(fields: [composerId], references: [id])
   composerId String
-  occassions Occassion[]
+  occasions  Occasion[]
 }
 
-model Occassion {
+model Occasion {
   id          String    @id
   label       String
   date        DateTime
