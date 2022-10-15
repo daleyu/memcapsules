@@ -1,24 +1,20 @@
+import { observer } from "mobx-react-lite";
 import { useRouter } from "next/router";
-import { memo, useState } from "react";
 import { fetchApi } from "../lib/fetchApi";
-import { OccasionFrontendModel } from "../types/frontendModels";
+import { Occasion } from "../store/composerFormStore";
 
 interface Props {
-  occasion: OccasionFrontendModel;
+  occasion: Occasion;
 }
 
-export const ComposerOccasionEntry = memo(function ComposerOccasionEntry({
+export const ComposerOccasionEntry = observer(function ComposerOccasionEntry({
   occasion,
 }: Props) {
   const router = useRouter();
 
-  const [message, setMessage] = useState(occasion.message ?? "");
-
-  const isUnsaved = message !== (occasion.message ?? "");
-
   const save = () => {
     fetchApi(`/api/occasion/${occasion.id}`, "PATCH", {
-      message,
+      message: occasion.message.length > 0 ? occasion.message : null,
     }).then(() => {
       router.reload();
     });
@@ -28,14 +24,12 @@ export const ComposerOccasionEntry = memo(function ComposerOccasionEntry({
     <div>
       <h2>Occasion: {occasion.label}</h2>
       <textarea
-        value={message}
+        value={occasion.message}
         onChange={(event) => {
-          setMessage(event.target.value);
+          occasion.setMessage(event.target.value);
         }}
       />
-      <button onClick={save} disabled={!isUnsaved}>
-        {isUnsaved ? "Save" : "Saved"}
-      </button>
+      <p>{occasion.saved ? "Saved" : "Unsaved"}</p>
     </div>
   );
 });

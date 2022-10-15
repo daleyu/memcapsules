@@ -1,8 +1,10 @@
 import { GetServerSideProps, NextPage } from "next";
-import { useRouter } from "next/router";
-import { ComposerRecipientForm } from "../../../components/composerRecipientForm";
+import { useState } from "react";
+import { ComposerFormControls } from "../../../components/composerFormControls";
+import { ComposerRecipientEntry } from "../../../components/composerRecipientEntry";
 import { SplitLayout } from "../../../layouts/splitLayout";
 import { prisma } from "../../../server/prisma";
+import { ComposerFormStore } from "../../../store/composerFormStore";
 import { ComposerFrontendModel } from "../../../types/frontendModels";
 
 interface Props {
@@ -11,38 +13,21 @@ interface Props {
 }
 
 const Compose: NextPage<Props> = ({ composer, page }) => {
-  const router = useRouter();
+  const [composerFormStore] = useState(() => new ComposerFormStore(composer));
 
   const recipient = composer.recipients[page - 1];
 
-  const hasPrev = page > 1;
-  const hasNext = page < composer.recipients.length;
-
-  const controls = (
-    <div>
-      <button
-        onClick={() => {
-          router.push(`/compose/${composer.id}/${page - 1}`);
-        }}
-        disabled={!hasPrev}
-      >
-        Previous
-      </button>
-      <button
-        onClick={() => {
-          router.push(`/compose/${composer.id}/${page + 1}`);
-        }}
-        disabled={!hasNext}
-      >
-        Next
-      </button>
-    </div>
-  );
-
   const main = (
     <div>
-      <ComposerRecipientForm key={recipient.id} recipient={recipient} />
-      {controls}
+      <ComposerRecipientEntry
+        recipient={recipient}
+        composerFormStore={composerFormStore}
+      />
+      <ComposerFormControls
+        composer={composer}
+        page={page}
+        composerFormStore={composerFormStore}
+      />
     </div>
   );
 
