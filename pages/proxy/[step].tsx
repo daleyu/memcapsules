@@ -104,8 +104,10 @@ const Proxy: NextPage = () => {
                 <b>Let's get started on creating your memory capsules!</b>
                 <br></br>
                 <br></br>
-                When would you like to retrieve your memory capsules and
-                remember you? When do you to retrieve it?
+                Who would you like to retrieve them, and when?
+                <br></br>
+                <br></br>
+                It is the small moments that paint a large picture.
               </SideText>
             </TextSideContainer>
           </SideContainer>
