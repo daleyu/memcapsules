@@ -59,7 +59,7 @@ export const TextSideContainer = styled.div`
 export const CenterDiv = styled.div`
   position: absolute;
   left: 170px;
-  top: 530px;
+  top: 540px;
 `;
 
 export const NextButton = styled.button`
@@ -97,4 +97,12 @@ export const PrevSubmitButton = styled.button`
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   margin: 15px;
+`;
+
+export const CenterDivSubmit = styled.div`
+  justify-content: center;
+`;
+
+export const CenterDivPrev = styled.div`
+  justify-content: center;
 `;

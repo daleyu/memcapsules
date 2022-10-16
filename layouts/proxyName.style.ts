@@ -4,7 +4,12 @@ import { Colors } from "../styles/tokens";
 export const InputButton = styled.div`
   background-color: ${Colors.primary};
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  padding: 5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 `;
 
 export const TextArea = styled.input`
@@ -12,10 +17,11 @@ export const TextArea = styled.input`
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 9px;
+  border: black;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: solid 1px #e5e5e5;
-  outline: 0;
+  border: solid 2px #e5e5e5;
+  outline: 1;
   font: normal 13px/100% Verdana, Tahoma, sans-serif;
   background: #ffffff url("bg_form.png") left top repeat-x;
   width: 600px;
