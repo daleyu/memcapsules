@@ -99,16 +99,16 @@ const Proxy: NextPage = () => {
       sidebar={
         <div>
           <SideContainer>
-            <p style={{ fontSize: 100, margin: 0 }}>👋</p>
+            <p style={{ fontSize: 100, margin: 0 }}></p>
             <TextSideContainer>
               <SideText>
-                <b>Let's get started on creating your memory capsules!</b>
+                <b>👋 Let's get started on creating your memory capsule!</b>
                 <br></br>
                 <br></br>
-                Who would you like to retrieve them, and when?
+                🥰 Who will be composing the lovely message(s)?
                 <br></br>
                 <br></br>
-                Remember, it is the small moments that paint a large picture.
+                🖼 What will your capsule look like?
               </SideText>
             </TextSideContainer>
           </SideContainer>
