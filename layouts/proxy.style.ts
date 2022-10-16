@@ -52,7 +52,8 @@ export const TextSideContainer = styled.div`
   word-wrap: break-word;
   text-align: center;
   font-size: 30px;
-  margin-left: 50px;
+  margin-left: 69px;
+  margin-top: 50px;
 `;
 
 export const CenterDiv = styled.div`
