@@ -108,7 +108,7 @@ const Proxy: NextPage = () => {
                 Who would you like to retrieve them, and when?
                 <br></br>
                 <br></br>
-                It is the small moments that paint a large picture.
+                Remember, it is the small moments that paint a large picture.
               </SideText>
             </TextSideContainer>
           </SideContainer>
