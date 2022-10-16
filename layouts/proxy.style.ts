@@ -57,9 +57,9 @@ export const TextSideContainer = styled.div`
 `;
 
 export const CenterDiv = styled.div`
-  display: flex;
-  text-align: center;
-  align-items: center;
+  position: absolute;
+  left: 170px;
+  top: 530px;
 `;
 
 export const NextButton = styled.button`
