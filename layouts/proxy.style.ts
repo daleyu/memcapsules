@@ -55,10 +55,17 @@ export const TextSideContainer = styled.div`
   margin-left: 50px;
 `;
 
+export const CenterDiv = styled.div`
+  text-align: center;
+`;
+
 export const NextButton = styled.button`
   width: auto;
+  display: flex;
+  display: inline-block;
+  text-align: center;
   padding: 9px 15px;
-  background: #617798;
+  background: #27b5e1;
   border: 0;
   font-size: 14px;
   color: #ffffff;

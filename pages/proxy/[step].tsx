@@ -4,6 +4,7 @@ import { ReactNode, useState } from "react";
 import { ProxyNameForm } from "../../components/proxyNameForm";
 import { ProxyRecipientsForm } from "../../components/proxyRecipientsForm";
 import {
+  CenterDiv,
   NextButton,
   SideContainer,
   SideText,
@@ -73,13 +74,15 @@ const Proxy: NextPage = () => {
     <>
       {formElement}
       {nextStep && (
-        <NextButton
-          onClick={() => {
-            router.push(`/proxy/${nextStep}`);
-          }}
-        >
-          Next
-        </NextButton>
+        <CenterDiv>
+          <NextButton
+            onClick={() => {
+              router.push(`/proxy/${nextStep}`);
+            }}
+          >
+            Next
+          </NextButton>
+        </CenterDiv>
       )}
       {prevStep && (
         <button
