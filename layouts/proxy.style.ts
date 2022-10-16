@@ -51,3 +51,14 @@ export const TextSideContainer = styled.div`
   white-space: -o-pre-wrap;
   word-wrap: break-word;
 `;
+
+export const NextButton = styled.button`
+  width: auto;
+  padding: 9px 15px;
+  background: #617798;
+  border: 0;
+  font-size: 14px;
+  color: #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+`;
