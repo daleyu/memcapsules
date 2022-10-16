@@ -97,9 +97,11 @@ const Proxy: NextPage = () => {
     </>
   );
 
-  return (
-    <SplitLayout
-      sidebar={
+  let sidebar;
+
+  switch (step) {
+    case "name":
+      sidebar = (
         <div>
           <SideContainer>
             <p style={{ fontSize: 100, margin: 0 }}></p>
@@ -122,10 +124,11 @@ const Proxy: NextPage = () => {
             </TextSideContainer>
           </SideContainer>
         </div>
-      }
-      main={main}
-    />
-  );
+      );
+      break;
+  }
+
+  return <SplitLayout sidebar={sidebar} main={main} />;
 };
 
 export default Proxy;
