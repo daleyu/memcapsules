@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { observer } from "mobx-react-lite";
+import { TextArea } from "../layouts/proxyform.style";
 import { Occasion } from "../store/proxyFormStore";
-
 interface Props {
   occasion: Occasion;
 }
@@ -15,7 +15,7 @@ export const ProxyOccasionEntry = observer(function ProxyOccasionEntry({
       <div>
         <label>
           Occasion label:
-          <input
+          <TextArea
             type="text"
             value={occasion.label}
             onChange={(event) => {

@@ -86,13 +86,15 @@ const Proxy: NextPage = () => {
         </CenterDiv>
       )}
       {prevStep && (
-        <PrevSubmitButton
-          onClick={() => {
-            router.push(`/proxy/${prevStep}`);
-          }}
-        >
-          Previous
-        </PrevSubmitButton>
+        <CenterDiv>
+          <PrevSubmitButton
+            onClick={() => {
+              router.push(`/proxy/${prevStep}`);
+            }}
+          >
+            Previous
+          </PrevSubmitButton>
+        </CenterDiv>
       )}
       {canSubmit && (
         <PrevSubmitButton onClick={handleSubmit}>Submit</PrevSubmitButton>
