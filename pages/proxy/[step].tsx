@@ -140,6 +140,8 @@ const Proxy: NextPage = () => {
                 <br></br>
                 <br></br>
                 <br></br>
+                <br></br>
+                <br></br>
                 <b> 📅 When would you like them to receive your message(s)? </b>
               </SideText>
             </TextSideContainer>
