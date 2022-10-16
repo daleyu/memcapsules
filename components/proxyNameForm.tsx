@@ -1,5 +1,9 @@
 import { observer } from "mobx-react-lite";
-import { InputButton } from "../layouts/proxyName.style";
+import {
+  CenteringDiv,
+  InputButton,
+  TextArea,
+} from "../layouts/proxyName.style";
 import { ProxyFormStore } from "../store/proxyFormStore";
 
 interface Props {
@@ -18,26 +22,30 @@ export const ProxyNameForm = observer(function ProxyNameForm({
       <div>
         <label>
           <InputButton>Proxy Name:</InputButton>
-          <input
-            type="text"
-            value={proxyFormStore.proxyName}
-            onChange={(event) => {
-              proxyFormStore.proxyName = event.target.value;
-            }}
-          />
+          <CenteringDiv>
+            <TextArea
+              type="text"
+              value={proxyFormStore.proxyName}
+              onChange={(event) => {
+                proxyFormStore.proxyName = event.target.value;
+              }}
+            />
+          </CenteringDiv>
         </label>
       </div>
 
       <div>
         <label>
           <InputButton>Composer Name:</InputButton>
-          <input
-            type="text"
-            value={proxyFormStore.composerName}
-            onChange={(event) => {
-              proxyFormStore.composerName = event.target.value;
-            }}
-          />
+          <CenteringDiv>
+            <TextArea
+              type="text"
+              value={proxyFormStore.composerName}
+              onChange={(event) => {
+                proxyFormStore.composerName = event.target.value;
+              }}
+            />
+          </CenteringDiv>
         </label>
       </div>
     </form>
