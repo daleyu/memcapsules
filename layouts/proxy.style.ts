@@ -79,3 +79,22 @@ export const NextButton = styled.button`
   -webkit-border-radius: 5px;
   width: 600px;
 `;
+
+export const PrevSubmitButton = styled.button`
+  display: flex;
+  display: inline-block;
+  text-align: center;
+  padding: 0px 15px;
+  width: 100px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  height: 43px;
+  vertical-align: middle;
+  background: #4293ef;
+  border: 0;
+  font-size: 15px;
+  color: #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: 15px;
+`;

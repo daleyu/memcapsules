@@ -1,4 +1,5 @@
 import { observer } from "mobx-react-lite";
+import { OccasionButton, TextArea } from "../layouts/proxyform.style";
 import { Recipient } from "../store/proxyFormStore";
 import { ProxyOccasionEntry } from "./proxyOccasionEntry";
 
@@ -14,7 +15,7 @@ export const ProxyRecipientEntry = observer(function ProxyRecipientEntry({
       <div>
         <label>
           Recipient name:
-          <input
+          <TextArea
             type="text"
             value={recipient.name}
             onChange={(event) => {
@@ -26,7 +27,7 @@ export const ProxyRecipientEntry = observer(function ProxyRecipientEntry({
       <div>
         <label>
           Email:
-          <input
+          <TextArea
             type="text"
             value={recipient.email}
             onChange={(event) => {
@@ -38,7 +39,7 @@ export const ProxyRecipientEntry = observer(function ProxyRecipientEntry({
       <div>
         <label>
           Phone:
-          <input
+          <TextArea
             type="text"
             value={recipient.phone}
             onChange={(event) => {
@@ -62,14 +63,14 @@ const OccasionList = observer(function OccasionList({
       {recipient.occasions.map((occasion, index) => (
         <ProxyOccasionEntry key={index} occasion={occasion} />
       ))}
-      <button
+      <OccasionButton
         onClick={() => {
           const now = new Date();
           recipient.addOccasion(now);
         }}
       >
         Add occasion
-      </button>
+      </OccasionButton>
     </div>
   );
 });
