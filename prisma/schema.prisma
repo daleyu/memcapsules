@@ -34,6 +34,6 @@ model Occasion {
   recipient   Recipient @relation(fields: [recipientId], references: [id])
   recipientId String
 
-  message String?
-  // TODO add video
+  message   String?
+  videoName String? // includes file extension
 }

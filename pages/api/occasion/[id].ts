@@ -15,6 +15,7 @@ export default async function handler(
       where: { id },
       data: {
         message: body.message,
+        videoName: body.videoName,
       },
     });
 
@@ -23,6 +24,7 @@ export default async function handler(
       label: occasion.label,
       date: occasion.date.toISOString(),
       message: occasion.message,
+      videoName: occasion.videoName,
     });
     return;
   }

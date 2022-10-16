@@ -9,7 +9,6 @@ interface Props {
 export const ProxyRecipientsForm = observer(function ProxyRecipientsForm({
   proxyFormStore,
 }: Props) {
-  console.log("here");
   return (
     <div>
       {proxyFormStore.recipients.map((recipient, index) => (

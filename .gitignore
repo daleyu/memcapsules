@@ -38,3 +38,6 @@ next-env.d.ts
 
 # Prisma db
 /prisma/dev.db*
+
+# uploaded videos
+/public/videos/*

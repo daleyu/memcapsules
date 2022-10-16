@@ -62,6 +62,7 @@ export default async function handler(
           label: occasion.label,
           date: occasion.date.toISOString(),
           message: occasion.message,
+          videoName: occasion.videoName,
         })),
       })),
     });

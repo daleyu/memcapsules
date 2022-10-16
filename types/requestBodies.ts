@@ -18,4 +18,5 @@ interface Occasion {
 
 export interface OccasionRequestBody {
   message: string | null;
+  videoName: string | null;
 }

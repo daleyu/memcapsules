@@ -27,6 +27,7 @@ export const ComposerFormControls = observer(function ComposerFormControls({
       // TODO bad await in for loop (here to not overload db)
       await fetchApi(`/api/occasion/${occasion.id}`, "PATCH", {
         message: occasion.message.length > 0 ? occasion.message : null,
+        videoName: occasion.videoName,
       });
     }
 

@@ -19,4 +19,9 @@ export interface OccasionFrontendModel {
   label: string;
   date: string;
   message: string | null;
+  videoName: string | null;
+}
+
+export interface VideoResponse {
+  videoName: string;
 }

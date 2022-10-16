@@ -83,6 +83,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
         label: occasion.label,
         date: occasion.date.toISOString(),
         message: occasion.message,
+        videoName: occasion.videoName,
       })),
     })),
   };

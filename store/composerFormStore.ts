@@ -59,12 +59,14 @@ export class Occasion {
   id: string;
   label: string;
   message: string;
+  videoName: string | null;
   saved: boolean;
 
   constructor(savedOccasion: OccasionFrontendModel) {
     this.id = savedOccasion.id;
     this.label = savedOccasion.label;
     this.message = savedOccasion.message ?? "";
+    this.videoName = savedOccasion.videoName;
     this.saved = true;
 
     makeAutoObservable(this);
@@ -75,8 +77,18 @@ export class Occasion {
     this.saved = false;
   }
 
+  setVideoName(videoName: string) {
+    this.videoName = videoName;
+    this.saved = false;
+  }
+
   updateSavedMessage(savedMessage: string | null) {
     this.saved = this.message === savedMessage ?? "";
+  }
+
+  updateSavedOccasion(savedOccasion: OccasionFrontendModel) {
+    const messageSaved = this.message === savedOccasion.message ?? "";
+    const videoNameSaved = this.videoName === savedOccasion.videoName;
   }
 
   get completed() {
