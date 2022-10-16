@@ -1,8 +1,10 @@
 import { GetServerSideProps, NextPage } from "next";
+import { useRouter } from "next/router";
 import { FormSubTitle } from "../../../components/formSubTitle";
 import { FormTitle } from "../../../components/formTitle";
 import { RecipientFormControls } from "../../../components/recipientFormControls";
 import { RecipientOccasionEntry } from "../../../components/recipientOccasionEntry";
+import SidebarEntry from "../../../components/sidebarEntry";
 import { SplitLayout } from "../../../layouts/splitLayout";
 import { prisma } from "../../../server/prisma";
 import {
@@ -16,6 +18,8 @@ interface Props {
 }
 
 const Compose: NextPage<Props> = ({ recipient, page }) => {
+  const router = useRouter();
+
   const occasion = recipient.occasions[page - 1];
 
   const main = (
@@ -28,7 +32,25 @@ const Compose: NextPage<Props> = ({ recipient, page }) => {
     </div>
   );
 
-  return <SplitLayout sidebar={<p>sidebar</p>} main={main} />;
+  const sidebar = (
+    <div>
+      {recipient.occasions.map((occasion, index) => (
+        <SidebarEntry
+          key={occasion.id}
+          active={page === index + 1}
+          title={occasion.label}
+          description={`This occasion was made avaliable on ${new Date(
+            occasion.date
+          ).toLocaleDateString()}`}
+          onClick={() => {
+            router.push(`/view/${recipient.id}/${index + 1}`);
+          }}
+        />
+      ))}
+    </div>
+  );
+
+  return <SplitLayout sidebar={sidebar} main={main} />;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (

@@ -4,7 +4,7 @@ import { ReactNode, useState } from "react";
 import { FormButton } from "../../components/formButton";
 import { ProxyNameForm } from "../../components/proxyNameForm";
 import { ProxyRecipientsForm } from "../../components/proxyRecipientsForm";
-import { SideContainer, TextSideContainer } from "../../layouts/proxy.style";
+import SidebarEntry from "../../components/sidebarEntry";
 import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import { ProxyFormStore } from "../../store/proxyFormStore";
@@ -99,25 +99,28 @@ const Proxy: NextPage = () => {
     </>
   );
 
-  return (
-    <SplitLayout
-      sidebar={
-        <div>
-          <SideContainer>
-            <p style={{ fontSize: 42 }}>👋</p>
-            <TextSideContainer>
-              <p>
-                <b> Let's get started on creating your memory capsules!</b>
-                <br></br>When would you like to retrieve your memory capsules
-                and remember you? When do you to retrieve it?
-              </p>
-            </TextSideContainer>
-          </SideContainer>
-        </div>
-      }
-      main={main}
-    />
+  const sidebar = (
+    <div>
+      <SidebarEntry
+        active={step === "name"}
+        title="Step 1"
+        description="Identify The Proxy And Composer"
+        onClick={() => {
+          router.push("/proxy/name");
+        }}
+      />
+      <SidebarEntry
+        active={step === "recipients"}
+        title="Step 2"
+        description="Add Recipients And Occasions For The Composer"
+        onClick={() => {
+          router.push("/proxy/recipients");
+        }}
+      />
+    </div>
   );
+
+  return <SplitLayout sidebar={sidebar} main={main} />;
 };
 
 export default Proxy;

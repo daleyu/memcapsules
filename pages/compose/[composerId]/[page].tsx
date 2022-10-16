@@ -1,7 +1,9 @@
 import { GetServerSideProps, NextPage } from "next";
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { ComposerFormControls } from "../../../components/composerFormControls";
 import { ComposerRecipientEntry } from "../../../components/composerRecipientEntry";
+import SidebarEntry from "../../../components/sidebarEntry";
 import { SplitLayout } from "../../../layouts/splitLayout";
 import { prisma } from "../../../server/prisma";
 import { ComposerFormStore } from "../../../store/composerFormStore";
@@ -14,6 +16,8 @@ interface Props {
 }
 
 const Compose: NextPage<Props> = ({ composer, page }) => {
+  const router = useRouter();
+
   const [composerFormStore] = useState(() => new ComposerFormStore(composer));
 
   const recipient = composer.recipients[page - 1];
@@ -46,7 +50,25 @@ const Compose: NextPage<Props> = ({ composer, page }) => {
     </div>
   );
 
-  return <SplitLayout sidebar={<p>sidebar</p>} main={main} />;
+  const sidebar = (
+    <div>
+      {composer.recipients.map((recipient, index) => (
+        <SidebarEntry
+          key={recipient.id}
+          active={page === index + 1}
+          title={recipient.name}
+          description={`Occasions to write: ${recipient.occasions
+            .map((occasion) => occasion.label)
+            .join(", ")}`}
+          onClick={() => {
+            router.push(`/compose/${composer.id}/${index + 1}`);
+          }}
+        />
+      ))}
+    </div>
+  );
+
+  return <SplitLayout sidebar={sidebar} main={main} />;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (

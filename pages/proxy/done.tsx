@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { FormButton } from "../../components/formButton";
 import { FormTitle } from "../../components/formTitle";
 import { InputWithLabel } from "../../components/inputWithLabel";
+import SidebarEntry from "../../components/sidebarEntry";
 import { SplitLayout } from "../../layouts/splitLayout";
 
 interface Props {
@@ -55,7 +56,17 @@ const Done: NextPage<Props> = ({ origin }) => {
     </div>
   );
 
-  return <SplitLayout sidebar={<></>} main={main} />;
+  const sidebar = (
+    <div>
+      <SidebarEntry
+        active
+        title="Share With Composer"
+        description="MemCapsules created a unique link for the designated composer to leave recipients messages."
+      />
+    </div>
+  );
+
+  return <SplitLayout sidebar={sidebar} main={main} />;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (

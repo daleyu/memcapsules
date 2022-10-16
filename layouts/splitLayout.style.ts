@@ -12,14 +12,11 @@ export const Container = styled.div`
 export const Sidebar = styled.div`
   flex: 1;
   background-color: ${Colors.OFF_WHITE};
+  padding: 100px 40px 30px 30px;
 `;
 
 export const Main = styled.div`
   flex: 2;
-  position: relative;
-`;
-
-export const MainContent = styled.div`
   padding: 60px 30px 30px 30px;
   position: relative;
 `;
