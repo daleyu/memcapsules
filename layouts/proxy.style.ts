@@ -98,11 +98,3 @@ export const PrevSubmitButton = styled.button`
   -webkit-border-radius: 5px;
   margin: 15px;
 `;
-
-export const CenterDivSubmit = styled.div`
-  justify-content: center;
-`;
-
-export const CenterDivPrev = styled.div`
-  justify-content: center;
-`;

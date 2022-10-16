@@ -5,8 +5,6 @@ import { ProxyNameForm } from "../../components/proxyNameForm";
 import { ProxyRecipientsForm } from "../../components/proxyRecipientsForm";
 import {
   CenterDiv,
-  CenterDivPrev,
-  CenterDivSubmit,
   NextButton,
   PrevSubmitButton,
   SideContainer,
@@ -88,7 +86,7 @@ const Proxy: NextPage = () => {
         </CenterDiv>
       )}
       {prevStep && (
-        <CenterDivPrev>
+        <div>
           <PrevSubmitButton
             onClick={() => {
               router.push(`/proxy/${prevStep}`);
@@ -96,12 +94,12 @@ const Proxy: NextPage = () => {
           >
             Previous
           </PrevSubmitButton>
-        </CenterDivPrev>
+        </div>
       )}
       {canSubmit && (
-        <CenterDivSubmit>
+        <div>
           <PrevSubmitButton onClick={handleSubmit}>Submit</PrevSubmitButton>
-        </CenterDivSubmit>
+        </div>
       )}
     </>
   );
