@@ -57,19 +57,25 @@ export const TextSideContainer = styled.div`
 `;
 
 export const CenterDiv = styled.div`
+  display: flex;
   text-align: center;
+  align-items: center;
 `;
 
 export const NextButton = styled.button`
-  width: auto;
   display: flex;
   display: inline-block;
   text-align: center;
-  padding: 9px 15px;
-  background: #27b5e1;
+  padding: 0px 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  height: 43px;
+  vertical-align: middle;
+  background: #4293ef;
   border: 0;
-  font-size: 14px;
+  font-size: 34px;
   color: #ffffff;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  width: 600px;
 `;
