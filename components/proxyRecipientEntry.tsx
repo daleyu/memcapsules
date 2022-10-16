@@ -1,5 +1,9 @@
 import { observer } from "mobx-react-lite";
+import { Fragment } from "react";
 import { Recipient } from "../store/proxyFormStore";
+import { FormButton } from "./formButton";
+import { FormDivider } from "./formDivider";
+import { InputWithLabel } from "./inputWithLabel";
 import { ProxyOccasionEntry } from "./proxyOccasionEntry";
 
 interface Props {
@@ -11,41 +15,33 @@ export const ProxyRecipientEntry = observer(function ProxyRecipientEntry({
 }: Props) {
   return (
     <div>
-      <div>
-        <label>
-          Recipient name:
-          <input
-            type="text"
-            value={recipient.name}
-            onChange={(event) => {
-              recipient.name = event.target.value;
-            }}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Email:
-          <input
-            type="text"
+      <InputWithLabel
+        largeSize
+        label="Recipient Name:"
+        value={recipient.name}
+        onChange={(value) => {
+          recipient.name = value;
+        }}
+      />
+      <div style={{ display: "flex", flexDirection: "row", gap: 20 }}>
+        <div style={{ flex: 1 }}>
+          <InputWithLabel
+            label="Email:"
             value={recipient.email}
-            onChange={(event) => {
-              recipient.email = event.target.value;
+            onChange={(value) => {
+              recipient.email = value;
             }}
           />
-        </label>
-      </div>
-      <div>
-        <label>
-          Phone:
-          <input
-            type="text"
+        </div>
+        <div style={{ flex: 1 }}>
+          <InputWithLabel
+            label="Phone:"
             value={recipient.phone}
-            onChange={(event) => {
-              recipient.phone = event.target.value;
+            onChange={(value) => {
+              recipient.phone = value;
             }}
           />
-        </label>
+        </div>
       </div>
       <OccasionList recipient={recipient} />
     </div>
@@ -59,17 +55,21 @@ const OccasionList = observer(function OccasionList({
 }) {
   return (
     <div>
+      <FormDivider smallSize />
       {recipient.occasions.map((occasion, index) => (
-        <ProxyOccasionEntry key={index} occasion={occasion} />
+        <Fragment key={index}>
+          <ProxyOccasionEntry occasion={occasion} />
+          <FormDivider smallSize />
+        </Fragment>
       ))}
-      <button
+      <FormButton
         onClick={() => {
           const now = new Date();
           recipient.addOccasion(now);
         }}
       >
-        Add occasion
-      </button>
+        Add Occasion
+      </FormButton>
     </div>
   );
 });

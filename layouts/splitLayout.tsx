@@ -6,6 +6,7 @@ import {
   LogoContainer,
   Main,
   MainContent,
+  MainContentConstrainWidth,
   Sidebar,
 } from "./splitLayout.style";
 
@@ -22,7 +23,9 @@ export function SplitLayout({ sidebar, main }: Props) {
         <LogoContainer>
           <Image src={logo} layout="responsive" />
         </LogoContainer>
-        <MainContent>{main}</MainContent>
+        <MainContent>
+          <MainContentConstrainWidth>{main}</MainContentConstrainWidth>
+        </MainContent>
       </Main>
     </Container>
   );

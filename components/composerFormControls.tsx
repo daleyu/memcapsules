@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import { fetchApi } from "../lib/fetchApi";
 import { ComposerFormStore } from "../store/composerFormStore";
 import { ComposerFrontendModel } from "../types/frontendModels";
+import { ComposerFormProgressBar } from "./composerFormProgressBar";
+import { FormButton } from "./formButton";
 
 interface Props {
   composer: ComposerFrontendModel;
@@ -36,26 +38,48 @@ export const ComposerFormControls = observer(function ComposerFormControls({
 
   return (
     <div>
-      <button
-        onClick={() => {
-          router.push(`/compose/${composer.id}/${page - 1}`);
-        }}
-        disabled={!hasPrev}
+      <FormButton
+        largeSize
+        fullWidth
+        onClick={handleSaveAll}
+        disabled={!hasUnsavedOccasions}
       >
-        Previous
-      </button>
-      <button onClick={handleSaveAll} disabled={!hasUnsavedOccasions}>
-        {hasUnsavedOccasions ? "Save all" : "All saved"}
-      </button>
-      <button
-        onClick={() => {
-          router.push(`/compose/${composer.id}/${page + 1}`);
-        }}
-        disabled={!hasNext}
-      >
-        Next
-      </button>
-      Progress: {progress.completed}/{progress.total}
+        {hasUnsavedOccasions ? "Save All" : "All Saved!"}
+      </FormButton>
+      {(hasPrev || hasNext) && (
+        <div style={{ display: "flex", flexDirection: "row", gap: 20 }}>
+          <div style={{ flex: 1 }}>
+            <FormButton
+              kind="secondary"
+              largeSize
+              fullWidth
+              onClick={() => {
+                router.push(`/compose/${composer.id}/${page - 1}`);
+              }}
+              disabled={!hasPrev}
+            >
+              Previous
+            </FormButton>
+          </div>
+          <div style={{ flex: 1 }}>
+            <FormButton
+              kind="secondary"
+              largeSize
+              fullWidth
+              onClick={() => {
+                router.push(`/compose/${composer.id}/${page + 1}`);
+              }}
+              disabled={!hasNext}
+            >
+              Next
+            </FormButton>
+          </div>
+        </div>
+      )}
+      <ComposerFormProgressBar
+        completed={progress.completed}
+        total={progress.total}
+      />
     </div>
   );
 });

@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Sidebar = styled.div`
   flex: 1;
-  background-color: ${Colors.offWhite};
+  background-color: ${Colors.OFF_WHITE};
   word-wrap: break-word;
   overflow: hidden;
   box-sizing: border-box;

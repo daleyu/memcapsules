@@ -8,6 +8,8 @@ import {
   TranscribePollResponse,
   TranscribeResponse,
 } from "../types/frontendModels";
+import { FormButton } from "./formButton";
+import { InputWithLabel } from "./inputWithLabel";
 
 const TRANCRIBE_TIMEOUT = 30 * 1000;
 const TRANSCRIBE_POLL_INTERVAL = 2000;
@@ -91,24 +93,45 @@ export const ComposerOccasionEntry = observer(function ComposerOccasionEntry({
 
   return (
     <div>
-      <h2>Occasion: {occasion.label}</h2>
-      <textarea
+      <InputWithLabel
+        type="textarea"
+        largeSize
+        label={`Occasion - ${occasion.label}${
+          occasion.saved ? "" : " (Not Saved)"
+        }`}
         value={occasion.message}
-        onChange={(event) => {
-          occasion.setMessage(event.target.value);
+        onChange={(value) => {
+          occasion.setMessage(value);
         }}
       />
+
       {occasion.videoName && (
-        <video controls src={`/videos/${occasion.videoName}`}></video>
+        <video
+          controls
+          src={`/videos/${occasion.videoName}`}
+          style={{
+            marginTop: 24,
+            width: "100%",
+            aspectRatio: 16 / 9,
+          }}
+        ></video>
       )}
+
       <input
         ref={inputRef}
         type="file"
         capture="user"
         accept="video/*"
         onChange={handleInputChange}
+        style={{ display: "none" }}
       />
-      <p>{occasion.saved ? "Saved" : "Unsaved"}</p>
+      <FormButton
+        onClick={() => {
+          inputRef.current?.click();
+        }}
+      >
+        Upload Video (Optional)
+      </FormButton>
     </div>
   );
 });

@@ -1,5 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { ProxyFormStore } from "../store/proxyFormStore";
+import { InputWithLabel } from "./inputWithLabel";
 
 interface Props {
   proxyFormStore: ProxyFormStore;
@@ -14,31 +15,22 @@ export const ProxyNameForm = observer(function ProxyNameForm({
         event.preventDefault();
       }}
     >
-      <div>
-        <label>
-          Proxy name:
-          <input
-            type="text"
-            value={proxyFormStore.proxyName}
-            onChange={(event) => {
-              proxyFormStore.proxyName = event.target.value;
-            }}
-          />
-        </label>
-      </div>
-
-      <div>
-        <label>
-          Composer name:
-          <input
-            type="text"
-            value={proxyFormStore.composerName}
-            onChange={(event) => {
-              proxyFormStore.composerName = event.target.value;
-            }}
-          />
-        </label>
-      </div>
+      <InputWithLabel
+        largeSize
+        label="Proxy Name:"
+        value={proxyFormStore.proxyName}
+        onChange={(value) => {
+          proxyFormStore.proxyName = value;
+        }}
+      />
+      <InputWithLabel
+        largeSize
+        label="Composer Name:"
+        value={proxyFormStore.composerName}
+        onChange={(value) => {
+          proxyFormStore.composerName = value;
+        }}
+      />
     </form>
   );
 });

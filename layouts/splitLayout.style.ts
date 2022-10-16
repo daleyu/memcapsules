@@ -3,7 +3,7 @@ import { Colors } from "../styles/tokens";
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Sidebar = styled.div`
   flex: 1;
-  background-color: ${Colors.offWhite};
+  background-color: ${Colors.OFF_WHITE};
 `;
 
 export const Main = styled.div`
@@ -24,10 +24,15 @@ export const MainContent = styled.div`
   position: relative;
 `;
 
+export const MainContentConstrainWidth = styled.div`
+  margin: 0 auto;
+  max-width: 600px;
+`;
+
 export const LogoContainer = styled.div`
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 16px;
+  top: 16px;
   width: 206px;
   height: 116px;
 `;

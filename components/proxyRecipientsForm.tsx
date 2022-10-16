@@ -1,5 +1,8 @@
 import { observer } from "mobx-react-lite";
+import { Fragment } from "react";
 import { ProxyFormStore } from "../store/proxyFormStore";
+import { FormButton } from "./formButton";
+import { FormDivider } from "./formDivider";
 import { ProxyRecipientEntry } from "./proxyRecipientEntry";
 
 interface Props {
@@ -12,15 +15,20 @@ export const ProxyRecipientsForm = observer(function ProxyRecipientsForm({
   return (
     <div>
       {proxyFormStore.recipients.map((recipient, index) => (
-        <ProxyRecipientEntry key={index} recipient={recipient} />
+        <Fragment key={index}>
+          <ProxyRecipientEntry recipient={recipient} />
+          <FormDivider />
+        </Fragment>
       ))}
-      <button
+      <FormButton
+        largeSize
         onClick={() => {
           proxyFormStore.addRecipient();
         }}
       >
-        Add recipient
-      </button>
+        Add Recipient
+      </FormButton>
+      <FormDivider />
     </div>
   );
 });

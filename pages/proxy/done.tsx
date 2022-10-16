@@ -1,7 +1,9 @@
 import { GetServerSideProps, NextPage } from "next";
 import absoluteUrl from "next-absolute-url";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import { FormButton } from "../../components/formButton";
+import { FormTitle } from "../../components/formTitle";
+import { InputWithLabel } from "../../components/inputWithLabel";
 import { SplitLayout } from "../../layouts/splitLayout";
 
 interface Props {
@@ -11,16 +13,45 @@ interface Props {
 const Done: NextPage<Props> = ({ origin }) => {
   const router = useRouter();
 
-  const { composerName, composerId } = router.query;
+  const composerName = router.query.composerName as string;
+  const composerId = router.query.composerId as string;
 
   const composeUrl = `${origin}/compose/${composerId}`;
 
   const main = (
     <div>
-      <h1>Done!</h1>
-      <h2>Composer name: {composerName}</h2>
-      <h2>Link:</h2>
-      <Link href={composeUrl}>{composeUrl}</Link>
+      <FormTitle>Request Ready!</FormTitle>
+      <InputWithLabel
+        largeSize
+        readOnly
+        label="Composer Name:"
+        value={composerName}
+      />
+      <InputWithLabel largeSize readOnly label="Link:" value={composeUrl} />
+
+      <div style={{ display: "flex", gap: 20 }}>
+        <div style={{ flex: 1 }}>
+          <FormButton
+            fullWidth
+            onClick={() => {
+              // TODO
+            }}
+          >
+            Copy
+          </FormButton>
+        </div>
+        <div style={{ flex: 1 }}>
+          <FormButton
+            kind="secondary"
+            fullWidth
+            onClick={() => {
+              router.push(`/compose/${composerId}`);
+            }}
+          >
+            Visit
+          </FormButton>
+        </div>
+      </div>
     </div>
   );
 

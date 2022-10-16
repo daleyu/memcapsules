@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
+import { FormButton } from "../../components/formButton";
 import { ProxyNameForm } from "../../components/proxyNameForm";
 import { ProxyRecipientsForm } from "../../components/proxyRecipientsForm";
 import { SideContainer, TextSideContainer } from "../../layouts/proxy.style";
@@ -68,24 +69,33 @@ const Proxy: NextPage = () => {
     <>
       {formElement}
       {nextStep && (
-        <button
+        <FormButton
+          largeSize
+          fullWidth
           onClick={() => {
             router.push(`/proxy/${nextStep}`);
           }}
         >
           Next
-        </button>
+        </FormButton>
+      )}
+      {canSubmit && (
+        <FormButton largeSize fullWidth onClick={handleSubmit}>
+          Submit
+        </FormButton>
       )}
       {prevStep && (
-        <button
+        <FormButton
+          kind="secondary"
+          largeSize
+          fullWidth
           onClick={() => {
             router.push(`/proxy/${prevStep}`);
           }}
         >
           Previous
-        </button>
+        </FormButton>
       )}
-      {canSubmit && <button onClick={handleSubmit}>Submit</button>}
     </>
   );
 
