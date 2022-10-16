@@ -9,6 +9,7 @@ const Input = styled.input<{ largeSize: boolean }>`
   width: 100%;
   height: ${(p) => (p.largeSize ? 50 : 40)}px;
   font-size: ${(p) => (p.largeSize ? 18 : 16)}px;
+  color: ${Colors.DARK_TEXT};
   padding: 0 12px;
 `;
 
@@ -20,6 +21,7 @@ const TextArea = styled.textarea<{ largeSize: boolean }>`
   min-width: 100%;
   height: ${(p) => (p.largeSize ? 160 : 120)}px;
   font-size: ${(p) => (p.largeSize ? 18 : 16)}px;
+  color: ${Colors.DARK_TEXT};
   padding: 8px 12px;
 `;
 

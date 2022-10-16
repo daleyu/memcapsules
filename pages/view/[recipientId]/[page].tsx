@@ -1,9 +1,14 @@
 import { GetServerSideProps, NextPage } from "next";
+import { FormSubTitle } from "../../../components/formSubTitle";
+import { FormTitle } from "../../../components/formTitle";
 import { RecipientFormControls } from "../../../components/recipientFormControls";
 import { RecipientOccasionEntry } from "../../../components/recipientOccasionEntry";
 import { SplitLayout } from "../../../layouts/splitLayout";
 import { prisma } from "../../../server/prisma";
-import { RecipientFrontendModel } from "../../../types/frontendModels";
+import {
+  OccasionFrontendModel,
+  RecipientFrontendModel,
+} from "../../../types/frontendModels";
 
 interface Props {
   recipient: RecipientFrontendModel;
@@ -15,8 +20,9 @@ const Compose: NextPage<Props> = ({ recipient, page }) => {
 
   const main = (
     <div>
-      <h1>Hello, {recipient.name}</h1>
-      <h2>Messages from {recipient.composerName}</h2>
+      <FormTitle>Hello, {recipient.name}!</FormTitle>
+      <FormSubTitle>View Messages From {recipient.composerName}</FormSubTitle>
+
       <RecipientOccasionEntry occasion={occasion} />
       <RecipientFormControls recipient={recipient} page={page} />
     </div>
@@ -59,13 +65,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   // const now = Date.now()
   const now = 0; // TODO revert
 
-  const occasions = dbRecipient.occasions
+  const occasions: OccasionFrontendModel[] = dbRecipient.occasions
     .filter((occasion) => Date.now() > now)
     .map((occasion) => ({
       id: occasion.id,
       label: occasion.label,
       date: occasion.date.toISOString(),
       message: occasion.message,
+      videoName: occasion.videoName,
     }));
 
   const recipient: RecipientFrontendModel = {

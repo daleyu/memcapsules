@@ -33,6 +33,5 @@ export const LogoContainer = styled.div`
   position: absolute;
   left: 16px;
   top: 16px;
-  width: 206px;
-  height: 116px;
+  width: 250px;
 `;

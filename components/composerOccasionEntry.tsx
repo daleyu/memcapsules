@@ -114,7 +114,7 @@ export const ComposerOccasionEntry = observer(function ComposerOccasionEntry({
             width: "100%",
             aspectRatio: 16 / 9,
           }}
-        ></video>
+        />
       )}
 
       <input

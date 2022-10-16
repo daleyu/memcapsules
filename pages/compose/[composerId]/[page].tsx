@@ -1,10 +1,11 @@
 import { GetServerSideProps, NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ComposerFormControls } from "../../../components/composerFormControls";
 import { ComposerRecipientEntry } from "../../../components/composerRecipientEntry";
 import { SplitLayout } from "../../../layouts/splitLayout";
 import { prisma } from "../../../server/prisma";
 import { ComposerFormStore } from "../../../store/composerFormStore";
+import { Colors } from "../../../styles/tokens";
 import { ComposerFrontendModel } from "../../../types/frontendModels";
 
 interface Props {
@@ -17,6 +18,15 @@ const Compose: NextPage<Props> = ({ composer, page }) => {
 
   const recipient = composer.recipients[page - 1];
 
+  // TODO: hacky way to show recipient's view link
+  const recipientViewRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (recipientViewRef.current) {
+      recipientViewRef.current.innerText = `${window.location.origin}/view/${recipient.id}`;
+    }
+  });
+
   const main = (
     <div>
       <ComposerRecipientEntry
@@ -27,6 +37,11 @@ const Compose: NextPage<Props> = ({ composer, page }) => {
         composer={composer}
         page={page}
         composerFormStore={composerFormStore}
+      />
+
+      <p
+        ref={recipientViewRef}
+        style={{ color: Colors.DARK_TEXT, opacity: 0.2 }}
       />
     </div>
   );
