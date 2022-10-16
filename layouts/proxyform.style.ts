@@ -7,6 +7,12 @@ export const InputButton = styled.div`
   border-radius: 10px;
 `;
 
+export const RecipientName = styled.p`
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 25;
+`;
+
 export const TextArea = styled.input`
   text-align: center;
   margin-top: 10px;
@@ -90,5 +96,5 @@ export const OccasionButton = styled.button`
   color: #ffffff;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  margin: 15px;
+  margin: 20px 0px;
 `;

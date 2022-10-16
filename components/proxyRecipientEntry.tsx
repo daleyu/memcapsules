@@ -1,5 +1,9 @@
 import { observer } from "mobx-react-lite";
-import { OccasionButton, TextArea } from "../layouts/proxyform.style";
+import {
+  OccasionButton,
+  RecipientName,
+  TextArea,
+} from "../layouts/proxyform.style";
 import { Recipient } from "../store/proxyFormStore";
 import { ProxyOccasionEntry } from "./proxyOccasionEntry";
 
@@ -14,7 +18,7 @@ export const ProxyRecipientEntry = observer(function ProxyRecipientEntry({
     <div>
       <div>
         <label>
-          Recipient name:
+          <RecipientName>Recipient name:</RecipientName>
           <TextArea
             type="text"
             value={recipient.name}
@@ -26,7 +30,7 @@ export const ProxyRecipientEntry = observer(function ProxyRecipientEntry({
       </div>
       <div>
         <label>
-          Email:
+          <RecipientName>Email:</RecipientName>
           <TextArea
             type="text"
             value={recipient.email}
@@ -38,7 +42,7 @@ export const ProxyRecipientEntry = observer(function ProxyRecipientEntry({
       </div>
       <div>
         <label>
-          Phone:
+          <RecipientName>Phone:</RecipientName>
           <TextArea
             type="text"
             value={recipient.phone}

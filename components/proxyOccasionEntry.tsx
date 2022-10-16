@@ -14,7 +14,7 @@ export const ProxyOccasionEntry = observer(function ProxyOccasionEntry({
     <div>
       <div>
         <label>
-          Occasion label:
+          <RecipientName>Occasion label:</RecipientName>
           <TextArea
             type="text"
             value={occasion.label}
@@ -26,7 +26,7 @@ export const ProxyOccasionEntry = observer(function ProxyOccasionEntry({
       </div>
       <div>
         <label>
-          Date
+          Date:
           <input
             type="date"
             value={format(occasion.date, "yyyy-MM-dd")}
