@@ -14,6 +14,7 @@ import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import { ProxyFormStore } from "../../store/proxyFormStore";
 import { ComposerFrontendModel } from "../../types/frontendModels";
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>;
 
 type Step = "name" | "recipients";
 
@@ -108,7 +109,13 @@ const Proxy: NextPage = () => {
                 <b>👋 Let's get started on creating your memory capsule!</b>
                 <br></br>
                 <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
                 🥰 Who will be composing the lovely message(s)?
+                <br></br>
+                <br></br>
+                <br></br>
                 <br></br>
                 <br></br>
                 🖼 What will your capsule look like?
