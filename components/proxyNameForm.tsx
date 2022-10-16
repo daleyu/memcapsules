@@ -17,7 +17,7 @@ export const ProxyNameForm = observer(function ProxyNameForm({
         event.preventDefault();
       }}
     >
-      <FormTitle>Help Your Loved Ones' Memories Live On!</FormTitle>
+      <FormTitle>Help Your Loved Ones&apos; Memories Live On!</FormTitle>
       <FormSubTitle>
         Invite a composer (like Grandma) to write a few letters to select
         recipients.
