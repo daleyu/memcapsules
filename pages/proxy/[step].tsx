@@ -14,7 +14,6 @@ import { SplitLayout } from "../../layouts/splitLayout";
 import { fetchApi } from "../../lib/fetchApi";
 import { ProxyFormStore } from "../../store/proxyFormStore";
 import { ComposerFrontendModel } from "../../types/frontendModels";
-<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>;
 
 type Step = "name" | "recipients";
 
