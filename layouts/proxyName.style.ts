@@ -37,4 +37,21 @@ export const CenteringDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: black;
+  border-width: 1px;
+`;
+
+export const CenteringSection = styled.div`
+  display: flex;
+  position: absolute;
+  top: 30%;
+  margin-left: 10%;
+  transform: translate(0, 100%);
+  padding: 10px;
+  justify-content: center;
+  outline: 1px solid;
+`;
+
+export const WhiteSpace = styled.div`
+  padding: 40px;
 `;
