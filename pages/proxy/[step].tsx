@@ -126,6 +126,19 @@ const Proxy: NextPage = () => {
         </div>
       );
       break;
+    case "recipients":
+      sidebar = (
+        <div>
+          <SideContainer>
+            <p style={{ fontSize: 100, margin: 0 }}></p>
+            <TextSideContainer>
+              <SideText>
+                <b>🙆 For whom would you like to capture this capsule?</b>
+              </SideText>
+            </TextSideContainer>
+          </SideContainer>
+        </div>
+      );
   }
 
   return <SplitLayout sidebar={sidebar} main={main} />;
