@@ -13,6 +13,12 @@ export const RecipientName = styled.p`
   font-size: 25;
 `;
 
+export const Date = styled.p`
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 15px;
+`;
+
 export const TextArea = styled.input`
   text-align: center;
   margin-top: 10px;

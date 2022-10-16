@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { observer } from "mobx-react-lite";
-import { TextArea } from "../layouts/proxyform.style";
+import { Date, RecipientName, TextArea } from "../layouts/proxyform.style";
 import { Occasion } from "../store/proxyFormStore";
 interface Props {
   occasion: Occasion;
@@ -26,7 +26,7 @@ export const ProxyOccasionEntry = observer(function ProxyOccasionEntry({
       </div>
       <div>
         <label>
-          Date:
+          <Date>Date:</Date>
           <input
             type="date"
             value={format(occasion.date, "yyyy-MM-dd")}
