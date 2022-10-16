@@ -41,7 +41,7 @@ const Compose: NextPage<Props> = ({ recipient, page }) => {
           title={occasion.label}
           description={`This occasion was made avaliable on ${new Date(
             occasion.date
-          ).toLocaleDateString()}`}
+          ).toLocaleDateString()}.`}
           onClick={() => {
             router.push(`/view/${recipient.id}/${index + 1}`);
           }}

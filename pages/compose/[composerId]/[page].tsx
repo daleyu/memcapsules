@@ -59,7 +59,7 @@ const Compose: NextPage<Props> = ({ composer, page }) => {
           title={recipient.name}
           description={`Occasions to write: ${recipient.occasions
             .map((occasion) => occasion.label)
-            .join(", ")}`}
+            .join(", ")}.`}
           onClick={() => {
             router.push(`/compose/${composer.id}/${index + 1}`);
           }}

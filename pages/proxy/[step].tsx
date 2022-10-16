@@ -104,7 +104,7 @@ const Proxy: NextPage = () => {
       <SidebarEntry
         active={step === "name"}
         title="Step 1"
-        description="Identify The Proxy And Composer"
+        description="Identify the proxy and composer."
         onClick={() => {
           router.push("/proxy/name");
         }}
@@ -112,7 +112,7 @@ const Proxy: NextPage = () => {
       <SidebarEntry
         active={step === "recipients"}
         title="Step 2"
-        description="Add Recipients And Occasions For The Composer"
+        description="Add recipients and occasions for the composer."
         onClick={() => {
           router.push("/proxy/recipients");
         }}
