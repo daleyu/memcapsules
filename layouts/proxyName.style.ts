@@ -44,9 +44,8 @@ export const CenteringDiv = styled.div`
 export const CenteringSection = styled.div`
   display: flex;
   position: absolute;
-  top: 30%;
-  margin-left: 10%;
-  transform: translate(0, 100%);
+  margin-left: 13%;
+  transform: translate(0, 50%);
   padding: 10px;
   justify-content: center;
   outline: 1px solid;
