@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { VIDEOS_CONTAINER_URL } from "../lib/azureStorage";
 import { OccasionFrontendModel } from "../types/frontendModels";
 import { InputWithLabel } from "./inputWithLabel";
 
@@ -25,7 +26,7 @@ export const RecipientOccasionEntry = memo(function RecipientOccasionEntry({
       {occasion.videoName && (
         <video
           controls
-          src={`/videos/${occasion.videoName}`}
+          src={`${VIDEOS_CONTAINER_URL}/${occasion.videoName}`}
           style={{
             marginTop: 24,
             width: "100%",
