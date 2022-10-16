@@ -41,3 +41,4 @@ next-env.d.ts
 
 # uploaded videos
 /public/videos/*
+!/public/videos/readme.txt
