@@ -1,6 +1,6 @@
 export async function fetchApi<Res>(
   path: string,
-  method: "PATCH" | "POST",
+  method: "GET" | "PATCH" | "POST",
   body?: any // TODO improve type
 ): Promise<Res> {
   const res = await fetch(path, {

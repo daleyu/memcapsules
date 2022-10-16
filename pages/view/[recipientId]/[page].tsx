@@ -56,11 +56,11 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
     };
   }
 
-  // const now = new Date().getTime();
+  // const now = Date.now()
   const now = 0; // TODO revert
 
   const occasions = dbRecipient.occasions
-    .filter((occasion) => occasion.date.getTime() > now)
+    .filter((occasion) => Date.now() > now)
     .map((occasion) => ({
       id: occasion.id,
       label: occasion.label,

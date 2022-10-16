@@ -25,3 +25,11 @@ export interface OccasionFrontendModel {
 export interface VideoResponse {
   videoName: string;
 }
+
+export interface TranscribeResponse {
+  assemblyId: string;
+}
+
+export interface TranscribePollResponse {
+  transcription: string | null;
+}
