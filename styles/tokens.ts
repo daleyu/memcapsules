@@ -8,3 +8,7 @@ export enum Colors {
   PRIMARY = "#FF4970",
   PRIMARY_SOFT = "#ef607e",
 }
+
+export enum Breakpoints {
+  MOBILE = "768px",
+}
