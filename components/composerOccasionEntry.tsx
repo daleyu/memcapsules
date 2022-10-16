@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useRouter } from "next/router";
 import { useRef } from "react";
+import { VIDEOS_CONTAINER_URL } from "../lib/azureStorage";
 import { fetchApi } from "../lib/fetchApi";
 import { sleep } from "../lib/sleep";
 import { Occasion } from "../store/composerFormStore";
@@ -108,7 +109,7 @@ export const ComposerOccasionEntry = observer(function ComposerOccasionEntry({
       {occasion.videoName && (
         <video
           controls
-          src={`/videos/${occasion.videoName}`}
+          src={`${VIDEOS_CONTAINER_URL}/${occasion.videoName}`}
           style={{
             marginTop: 24,
             width: "100%",

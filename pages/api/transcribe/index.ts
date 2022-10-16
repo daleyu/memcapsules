@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import absoluteUrl from "next-absolute-url";
 import {
   ASSEMBLY_AI_API_KEY,
   ASSEMBLY_AI_TRANSCRIPT_URL,
   ASSEMBLY_AI_UPLOAD_URL,
 } from "../../../lib/assemblyAi";
+import { VIDEOS_CONTAINER_URL } from "../../../lib/azureStorage";
 import { TranscribeResponse } from "../../../types/frontendModels";
 
 export default async function handler(
@@ -14,9 +14,7 @@ export default async function handler(
   if (req.method === "GET") {
     const videoName = req.query.videoName as string;
 
-    const { origin } = absoluteUrl(req);
-
-    const videoRes = await fetch(`${origin}/videos/${videoName}`, {
+    const videoRes = await fetch(`${VIDEOS_CONTAINER_URL}/${videoName}`, {
       method: "GET",
     });
 
