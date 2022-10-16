@@ -83,10 +83,10 @@ export const ComposerOccasionEntry = observer(function ComposerOccasionEntry({
 
     const alreadyHasMessage = occasion.message.trim().length > 0;
     const prefix = alreadyHasMessage
-      ? `${occasion.message}\n----------------\n`
+      ? `${occasion.message}\n\n----------------\n\n`
       : "";
 
-    occasion.setMessage(prefix + transcription);
+    occasion.setMessage(prefix + "Video transcription:\n\n" + transcription);
   };
 
   return (
